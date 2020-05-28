@@ -46,7 +46,7 @@ function getToDoItem():ToDoItem{
 
     // get due date
     let dueDateInput = getInput("due-date");
-    myItem.title = titleInput.value;
+    myItem.dueDate = new Date(dueDateInput.value);
 
     // get isCompleted
     let isCompleted = getInput("is-complete");
@@ -79,10 +79,24 @@ function displayToDoItem(item:ToDoItem):void{
     }
 
     /*
+    <div class="completed">
+        <h3>Record JS Lecture</h3>
+        <p>June 1st 2020</p>
+    </div>
+    */
     // <div class = "completed"></div>
     itemDiv.appendChild(itemText);
     itemDiv.appendChild(itemDate);
-    */
+
+    if(item.isCompleted){
+        let completedToDos = document.getElementById("complete-items");
+        completedToDos.appendChild(itemDiv);
+    }
+    else{
+        let incompleteToDos = document.getElementById("complete-items");
+        incompleteToDos.appendChild(itemDiv);
+    }
+    
 }
 
 // Task: Allow use to mark a ToDoItem as completed

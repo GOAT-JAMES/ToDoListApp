@@ -23,7 +23,7 @@ function getToDoItem() {
     var titleInput = getInput("title");
     myItem.title = titleInput.value;
     var dueDateInput = getInput("due-date");
-    myItem.title = titleInput.value;
+    myItem.dueDate = new Date(dueDateInput.value);
     var isCompleted = getInput("is-complete");
     myItem.isCompleted = isCompleted.checked;
     return myItem;
@@ -39,5 +39,15 @@ function displayToDoItem(item) {
     var itemDiv = document.createElement("div");
     if (item.isCompleted) {
         itemDiv.classList.add("completed");
+    }
+    itemDiv.appendChild(itemText);
+    itemDiv.appendChild(itemDate);
+    if (item.isCompleted) {
+        var completedToDos = document.getElementById("complete-items");
+        completedToDos.appendChild(itemDiv);
+    }
+    else {
+        var incompleteToDos = document.getElementById("complete-items");
+        incompleteToDos.appendChild(itemDiv);
     }
 }
