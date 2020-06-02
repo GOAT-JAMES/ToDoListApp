@@ -29,7 +29,7 @@
 }
 
 #complete-items{
-    border: .2em solid blue;
+    border: 10px ridge #1C6EA4;
     
 }
 
@@ -42,5 +42,13 @@
 }
 
 body{
-    background-color: blanchedalmond;
+    background-color: rgba(255, 255, 255, 0.616);
+}
+
+#maindiv{
+    text-align: center;
+}
+
+#add{
+    background-color: rgb(204, 193, 193);
 }
