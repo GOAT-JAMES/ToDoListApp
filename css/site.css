@@ -6,6 +6,10 @@
     border-radius: .1em;
     margin: 1em;
     cursor: pointer;
+    -webkit-transform: scale(2.0);
+        -ms-transform: scale(2.3);
+        transform: scale(1.2);
+    
 }
 
 .todo h3{
@@ -19,10 +23,14 @@
 .completed{
     background-color: lightgreen;
     text-decoration: line-through;
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.9);
 }
 
 #complete-items{
     border: .2em solid blue;
+    
 }
 
 
@@ -31,4 +39,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+body{
+    background-color: blanchedalmond;
 }
